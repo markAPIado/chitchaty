@@ -1,6 +1,7 @@
 import path from 'path'
 import express from 'express'
 import morgan from 'morgan'
+import cors from 'cors'
 import { notFound } from './middlewares/not-found.middleware.js'
 import { errorHandler } from './middlewares/error-handler.middleware.js'
 import { messageRouter } from './routes/message.routes.js'
@@ -9,8 +10,11 @@ const __dirname = path.resolve()
 
 const app = express()
 app.use(express.json())
+const corsOptions = {
+  origin: 'https://chitchaty.herokuapp.com',
+}
+app.use(cors(corsOptions))
 app.use(express.static(path.join(__dirname, '/frontend')))
-
 
 if (app.get('env') !== 'production') {
   app.use(morgan('dev'))
