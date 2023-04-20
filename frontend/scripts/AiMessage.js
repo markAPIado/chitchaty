@@ -30,6 +30,9 @@ const AiMessage = {
         const response = await API.sendMessage({ message })
         AiMessage.response = response
         AiMessage.isLoading = false
+        if (response.status !== 200) {
+          AiMessage.error = true
+        }
         AiMessage.updateMessage()
         selectMessage.classList.remove('loading')
       } catch (error) {
@@ -37,16 +40,29 @@ const AiMessage = {
       }
     }
   },
+  launchToast: (message) => {
+    const toast = document.getElementById('toast')
+    const toastMessage = document.querySelector('#toast #desc')
+    toastMessage.innerText = message
+    toast.className = 'show'
+    setTimeout(function () {
+      toast.className = toast.className.replace('show', '')
+    }, 5000)
+  },
   questions: [],
   isLoading: false,
+  error: false,
   response: null,
   updateMessage() {
+    const selectMessage = document.querySelector('.message')
+    if (AiMessage.error) {
+      AiMessage.launchToast('Something went wrong.')
+      selectMessage.style.display = 'none'
+      return
+    }
     if (AiMessage.response) {
-      const selectMessage = document.querySelector('.message')
       selectMessage.style.display = 'block'
       selectMessage.innerText = AiMessage.response.data
-    } else {
-      // TODO: ADD LOGIC TO SHOW/HIDE ELEMENTS
     }
   },
 }
