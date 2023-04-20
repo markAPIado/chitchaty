@@ -48,7 +48,7 @@ body {
   background-image: linear-gradient(
       rgba(75, 73, 76, 1),
       rgba(75, 73, 76, 1),
-      rgba(75, 73, 76, .5),
+      rgba(75, 73, 76, 0.5),
       rgba(75, 73, 76, 0)
     ),
     url(../images/bg.jpg);
@@ -92,8 +92,8 @@ body {
   background: rgb(75, 73, 76);
   background: linear-gradient(
     0deg,
-    rgba(75, 73, 76, .8) 7%,
-    rgba(233, 242, 248, .9) 54%,
+    rgba(75, 73, 76, 0.8) 7%,
+    rgba(233, 242, 248, 0.9) 54%,
     rgb(233, 242, 248, 1) 60%
   );
   border-radius: 1rem;
@@ -196,7 +196,25 @@ body {
   color: #fffd98;
 }
 
+/* 
+  GLOBAL LOADER
+*/
 
+.global-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(58, 56, 59, 1);
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 
+  ANIMATIONS
+*/
 
 @keyframes loading {
   0% {
@@ -208,20 +226,77 @@ body {
   }
 }
 
-
-/* 
-  ANIMATIONS
-*/
 .loading {
-    color: transparent;
-    background: linear-gradient(100deg, #eceff1 30%, #c7c7c7 50%, #eceff1 70%);
-    background-size: 400%;
-    animation: loading 1.2s ease-in-out infinite;
-    min-height: 12px;
-    color: var(--backgroundDarker);
-    z-index: 9999;
+  color: transparent;
+  background: linear-gradient(100deg, #eceff1 30%, #c7c7c7 50%, #eceff1 70%);
+  background-size: 400%;
+  animation: loading 1.2s ease-in-out infinite;
+  min-height: 12px;
+  color: var(--backgroundDarker);
+  z-index: 9999;
 }
 
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
 
 /* 
   MEDIA QUERIES
@@ -238,5 +313,3 @@ body {
     font-size: 2.5rem;
   }
 }
-
-
