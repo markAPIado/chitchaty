@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="scripts/app.js" type="module"></script>
+
+  <title>Chitchaty </title>
+</head>
+
+<body>
+  <header class="header-main">
+    <a class="navlink logo" id="linkHome" href="/">
+      Chitchaty
+    </a>
+  </header>
+  <main>
+    <section class="page" id="home">
+      <div class="chat-container">
+        <h2 class="tag-line">Just ask me about anything...</h2>
+        <div class="question"></div>
+        <div class="message"></div>
+      </div>
+      <form class="form-message" id="form-message" onsubmit="AiMessage.sendMessage(event)">
+        <fieldset>
+          <div class="form-message-group">
+            <input class="form-message-input" placeholder="Send a message..." id="form-message-input" autofocus="true"
+              required></input>
+            <button class="form-message-button">Send</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+    <section class="page" id="not-found">
+      Seems like you're lost...
+      Get back to the <a href="/">home page</a>.
+    </section>
+  </main>
+</body>
+
+</html>
