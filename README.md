@@ -55,7 +55,7 @@ Chitchaty can answer almost any questions you have in mind. It is running Chat G
    ```
 
 You should now be able to access the app at [http://localhost:5090](http://localhost:5090)! 
-You may also check the live demo version of chitchaty: https://chitchaty.heroku.com.
+You may also check the live demo version of chitchaty: https://chitchaty.herokuapp.com.
 
 ## Heroku Deployment
 NOTE: The project provides also the necessary setup for your heroku depl.yment.
@@ -82,7 +82,7 @@ NOTE: The project provides also the necessary setup for your heroku depl.yment.
    ```bash
 	heroku git:remote -a chitchaty
    ```
- 7. Add the following environment variables to the heroku dashboard.
+ 7. Add the following environment variables to the heroku dashboard.Got to your app(chitchatty) > settings > Config Vars.
    ```bash
 	MONGO_PROD_URI
 	OPENAI_API_KEY
