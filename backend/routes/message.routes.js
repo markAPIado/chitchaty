@@ -1,9 +1,18 @@
 import express from 'express'
-import { createMessageHandler, sendMessageHandler } from '../controllers/message.controller.js';
+import {
+  createMessageHandler,
+  sendMessageHandler,
+} from '../controllers/message.controller.js'
+import { validateInput } from '../middlewares/input-validation.js'
+import { messageSchema } from '../schema/message.schema.js'
 
-const messageRouter = express.Router();
+const messageRouter = express.Router()
 
-messageRouter.post('/', createMessageHandler, sendMessageHandler)
+messageRouter.post(
+  '/',
+  validateInput('message', messageSchema, true),
+  createMessageHandler,
+  sendMessageHandler
+)
 
-export { messageRouter };
-
+export { messageRouter }
