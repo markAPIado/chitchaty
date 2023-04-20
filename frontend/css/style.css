@@ -164,7 +164,7 @@ body {
   border: none;
   background-color: var(--backgroundLight);
   color: #fffd98;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .form-message-input::placeholder {
@@ -208,6 +208,10 @@ body {
   }
 }
 
+
+/* 
+  ANIMATIONS
+*/
 .loading {
     color: transparent;
     background: linear-gradient(100deg, #eceff1 30%, #c7c7c7 50%, #eceff1 70%);
@@ -218,8 +222,21 @@ body {
     z-index: 9999;
 }
 
+
+/* 
+  MEDIA QUERIES
+*/
+
+@media (min-width: 380px) {
+  .form-message-input {
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .tag-line {
     font-size: 2.5rem;
   }
 }
+
+
