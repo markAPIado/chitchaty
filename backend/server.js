@@ -5,10 +5,12 @@ import cors from 'cors'
 import { notFound } from './middlewares/not-found.middleware.js'
 import { errorHandler } from './middlewares/error-handler.middleware.js'
 import { messageRouter } from './routes/message.routes.js'
+import connectToMongoDB from './utils/connect-mongodb.utils.js'
 
 const __dirname = path.resolve()
 
 const app = express()
+connectToMongoDB()
 
 app.use(express.json())
 app.use(cors())
