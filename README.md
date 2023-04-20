@@ -1,4 +1,4 @@
-# Chichaty
+# Chitchaty
 Chitchaty can answer almost any questions you have in mind. It is running Chat GPT in the background.
 
 ## Project Setup
@@ -58,7 +58,7 @@ You should now be able to access the app at [http://localhost:5090](http://local
 You may also check the live demo version of chitchaty: https://chitchaty.herokuapp.com.
 
 ## Heroku Deployment
-NOTE: The project provides also the necessary setup for your heroku depl.yment.
+NOTE: The project provides also the necessary setup for your heroku deployment.
 
  1. Install the Heroku CLI
  2. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line).
@@ -80,7 +80,7 @@ NOTE: The project provides also the necessary setup for your heroku depl.yment.
    ```
  6. For existing repositories, simply add the heroku remote
    ```bash
-	heroku git:remote -a chitchaty
+	heroku git:remote -a [APP_NAME]
    ```
  7. Add the following environment variables to the heroku dashboard.Got to your app(chitchatty) > settings > Config Vars.
    ```bash
