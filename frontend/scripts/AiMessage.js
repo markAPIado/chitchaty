@@ -7,6 +7,13 @@ const AiMessage = {
     const selectMessage = document.querySelector('.message')
     const inputQuestion = document.querySelector('#form-message-input')
 
+    // Check if it contains blank string
+    const isBlank = AiMessage.testBlankString(inputQuestion.value)
+    if (isBlank) {
+      AiMessage.launchToast('Please enter a question')
+      return
+    }
+
     selectQuestion.innerText = inputQuestion.value
     selectQuestion.style.display = 'block'
 
@@ -51,6 +58,14 @@ const AiMessage = {
     setTimeout(function () {
       toast.className = toast.className.replace('show', '')
     }, 5000)
+  },
+  testBlankString: (value) => {
+    // Check if the string is blank
+    const regex = /^\s*$/
+
+    //  Test the input value
+    const isBlank = regex.test(value)
+    return isBlank
   },
   resetApp: () => {
     AiMessage.questions = []
