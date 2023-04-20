@@ -30,8 +30,11 @@ const AiMessage = {
         const response = await API.sendMessage({ message })
         AiMessage.response = response
         AiMessage.isLoading = false
-        if (response.status !== 200) {
+        if (response.error) {
           AiMessage.error = true
+          // Show reset button
+          const selectResetButton = document.querySelector('.form-reset-button')
+          selectResetButton.style.display = 'block'
         }
         AiMessage.updateMessage()
         selectMessage.classList.remove('loading')
@@ -49,6 +52,15 @@ const AiMessage = {
       toast.className = toast.className.replace('show', '')
     }, 5000)
   },
+  resetApp: () => {
+    AiMessage.questions = []
+    const selectQuestion = document.querySelector('.question')
+    selectQuestion.style.display = 'none'
+    selectQuestion.innerText = ''
+    const selectResetButton = document.querySelector('.form-reset-button')
+    selectResetButton.style.display = 'none'
+    AiMessage.error = false
+  },
   questions: [],
   isLoading: false,
   error: false,
@@ -63,6 +75,7 @@ const AiMessage = {
     if (AiMessage.response) {
       selectMessage.style.display = 'block'
       selectMessage.innerText = AiMessage.response.data
+      AiMessage.error = false
     }
   },
 }
