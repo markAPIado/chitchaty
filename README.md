@@ -31,19 +31,19 @@ Chitchaty can answer almost any questions you have in mind. It is running Chat G
    ```
 6. Add your [API key](https://platform.openai.com/account/api-keys) to the newly created `.env` file
    ```bash
-   OPENAI_API_KEY=<ADD API KEY>
+   OPENAI_API_KEY=[ADD API KEY]
    ```
 7. Add your local MongoDB URI `.env` file
    ```bash
-   MONGO_LOCAL_URI=<ADD LOCAL MONGO DB INSTANCE HERE>
+   MONGO_LOCAL_URI=[ADD LOCAL MONGO DB INSTANCE HERE]
    ```
 8. Add your production MongoDB URI `.env` file. 
    ```bash
-   MONGO_PROD_URI=<ADD PRODUCTION MONGO DB INSTANCE HERE>
+   MONGO_PROD_URI=[ADD PRODUCTION MONGO DB INSTANCE HERE]
    ```
-9. You may change the default env settings. 
+9. You may change the default env settings. Change the `NODE_ENV` if you want to simulate different node environment during the development of your app.
    ```bash
-	NODE_ENV=development - Change this if you want to simulate different node environment during the development of your app
+	NODE_ENV=development
 	PORT=5090
    ```
 
@@ -70,7 +70,7 @@ NOTE: The project provides also the necessary setup for your heroku depl.yment.
    ```bash
 	cd my-project/
 	git init
-	heroku git:remote -a <APP_NAME>
+	heroku git:remote -a [APP_NAME]
    ```
  5. Deploy your application. Commit your code to the repository and deploy it to Heroku using Git.
    ```bash
