@@ -10,7 +10,7 @@ const messageRouter = express.Router()
 
 messageRouter.post(
   '/',
-  validateInput('message', messageSchema, true),
+  validateInput(messageSchema),
   createMessageHandler,
   sendMessageHandler
 )
