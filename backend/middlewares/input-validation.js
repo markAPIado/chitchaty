@@ -15,5 +15,5 @@ export const validateInput =
       errors.message = item.message
     })
 
-    res.status(400).json(errors)
+    res.status(400).json({ error: errors })
   }
