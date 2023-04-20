@@ -9,11 +9,10 @@ import { messageRouter } from './routes/message.routes.js'
 const __dirname = path.resolve()
 
 const app = express()
+
 app.use(express.json())
-const corsOptions = {
-  origin: 'https://chitchaty.herokuapp.com',
-}
-app.use(cors(corsOptions))
+app.use(cors())
+
 app.use(express.static(path.join(__dirname, '/frontend')))
 
 if (app.get('env') !== 'production') {
