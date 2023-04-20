@@ -52,7 +52,6 @@ body {
       rgba(75, 73, 76, 0)
     ),
     url(../images/bg.jpg);
-
   color: var(--text);
 }
 
@@ -120,6 +119,8 @@ body {
 .tag-line {
   text-align: center;
   color: #119822;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .question,
@@ -154,7 +155,6 @@ body {
   margin: 0 auto;
   width: 80%;
   margin-bottom: 2rem;
-  /* Add shadow */
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
 }
 
@@ -188,9 +188,8 @@ body {
 
 #not-found {
   font-size: 2rem;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 68px);
   padding: 2rem;
-  
 }
 
 #not-found a {
@@ -217,4 +216,10 @@ body {
     min-height: 12px;
     color: var(--backgroundDarker);
     z-index: 9999;
+}
+
+@media (min-width: 768px) {
+  .tag-line {
+    font-size: 2.5rem;
+  }
 }
